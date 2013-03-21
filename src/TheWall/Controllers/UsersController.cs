@@ -33,7 +33,7 @@ namespace TheWall.Controllers
         }
 
         // POST api/users
-        public void Post([FromBody]Member value)
+        public void Post(Member value)
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
@@ -43,7 +43,7 @@ namespace TheWall.Controllers
         }
 
         // PUT api/users/5
-        public void Put(int id, [FromBody]Member value)
+        public void Put(int id, Member value)
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
