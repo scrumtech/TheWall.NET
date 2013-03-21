@@ -12,7 +12,7 @@ namespace TheWall.Hubs
         public void Send(string updateType, StoryCard changedStoryCard)
         {
             // call broadcast message
-            Clients.All.sendStoryCardUpdate(updateType, changedStoryCard);
+            Clients.All.storyCardUpdate(updateType, changedStoryCard);
         }
     }
 }
