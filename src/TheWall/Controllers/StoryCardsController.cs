@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TheWall.Hubs;
 using TheWall.Models;
 
 namespace TheWall.Controllers
@@ -38,6 +39,9 @@ namespace TheWall.Controllers
                 ravenSession.Store(value);
                 ravenSession.SaveChanges();
             }
+
+            var storyBoardHub = new StoryCardHub();
+            storyBoardHub.Send("new", value);
         }
 
         // PUT api/storycards/5
@@ -49,6 +53,9 @@ namespace TheWall.Controllers
                 ravenSession.Store(value);
                 ravenSession.SaveChanges();
             }
+
+            var storyBoardHub = new StoryCardHub();
+            storyBoardHub.Send("update", value);
         }
 
         // DELETE api/storycards/5
