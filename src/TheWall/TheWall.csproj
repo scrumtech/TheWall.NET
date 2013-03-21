@@ -209,6 +209,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="Hubs\StoryCardHub.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\StickyNote.cs" />
     <Compile Include="Models\StoryCard.cs" />
