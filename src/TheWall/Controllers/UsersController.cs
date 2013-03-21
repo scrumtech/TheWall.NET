@@ -8,40 +8,32 @@ using TheWall.Models;
 
 namespace TheWall.Controllers
 {
-    public class StoryCardController : ApiController
+    public class UsersController : ApiController
     {
-        // GET api/storycard
-        public IEnumerable<StoryCard> Get()
+        // GET api/users
+        public IEnumerable<Member> Get()
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
-                var storyCards = ravenSession.Query<StoryCard>();
+                var members = ravenSession.Query<Member>();
 
-                return storyCards;
+                return members;
             }
         }
 
-        // GET api/storycard/5
-        public StoryCard Get(int id)
+        // GET api/users/5
+        public Member Get(int id)
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
-                return ravenSession.Load<StoryCard>(id);
+                var member = ravenSession.Load<Member>(id);
+
+                return member;
             }
         }
 
-        // POST api/storycard
-        public void Post([FromBody]StoryCard value)
-        {
-            using (var ravenSession = RavenDataStore.Instance.OpenSession())
-            {
-                ravenSession.Store(value);
-                ravenSession.SaveChanges();
-            }
-        }
-
-        // PUT api/storycard/5
-        public void Put(int id, [FromBody]string value)
+        // POST api/users
+        public void Post([FromBody]Member value)
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
@@ -50,10 +42,19 @@ namespace TheWall.Controllers
             }
         }
 
-        // DELETE api/storycard/5
+        // PUT api/users/5
+        public void Put(int id, [FromBody]Member value)
+        {
+            using (var ravenSession = RavenDataStore.Instance.OpenSession())
+            {
+                ravenSession.Store(value);
+                ravenSession.SaveChanges();
+            }
+        }
+
+        // DELETE api/users/5
         public void Delete(int id)
         {
-            throw new NotImplementedException();
         }
     }
 }
