@@ -27,7 +27,7 @@
             instance = new EmbeddableDocumentStore() 
             { 
                 ConnectionStringName = "RavenDB", 
-#if Debug
+#if DEBUG
                 UseEmbeddedHttpServer = true 
 #endif
             };

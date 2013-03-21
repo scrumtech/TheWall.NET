@@ -1,16 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using TheWall.Models;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UsersController.cs" company="nib healthfunds ltd.">
+//   Copyright 2013
+// </copyright>
+// <summary>
+//   Defines the UsersController type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace TheWall.Controllers
 {
+    using System.Collections.Generic;
+    using System.Web.Http;
+
+    using TheWall.Models;
+
+    /// <summary>
+    /// The users controller.
+    /// </summary>
     public class UsersController : ApiController
     {
-        // GET api/users
+        /// <summary>
+        /// Defines REST get function accessed via 'api/users'
+        /// </summary>
+        /// <returns>
+        /// A <see cref="IEnumerable"/> of <see cref="Member"/>.
+        /// </returns>
         public IEnumerable<Member> Get()
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
@@ -33,7 +47,7 @@ namespace TheWall.Controllers
         }
 
         // POST api/users
-        public void Post(Member value)
+        public void Post([FromBody] Member value)
         {
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
@@ -43,8 +57,9 @@ namespace TheWall.Controllers
         }
 
         // PUT api/users/5
-        public void Put(int id, Member value)
+        public void Put(int id, [FromBody] Member value)
         {
+            value.Id = id;
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
                 ravenSession.Store(value);

@@ -47,9 +47,9 @@ namespace TheWall.Controllers
         // PUT api/storycards/5
         public void Put(int id, [FromBody]StoryCard value)
         {
+            value.Id = id;
             using (var ravenSession = RavenDataStore.Instance.OpenSession())
             {
-                var storyCard = ravenSession.Load<StoryCard>(id);
                 ravenSession.Store(value);
                 ravenSession.SaveChanges();
             }
