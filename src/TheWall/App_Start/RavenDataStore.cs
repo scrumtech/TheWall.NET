@@ -27,7 +27,9 @@
             instance = new EmbeddableDocumentStore() 
             { 
                 ConnectionStringName = "RavenDB", 
+#if Debug
                 UseEmbeddedHttpServer = true 
+#endif
             };
             // instance.Conventions.IdentityPartsSeparator = "-";
             instance.Initialize();
