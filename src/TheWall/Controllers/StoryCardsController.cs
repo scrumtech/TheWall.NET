@@ -74,8 +74,6 @@ namespace TheWall.Controllers
 
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<StoryCardHub>();
             hubContext.Clients.All.storyCardUpdate("new", value);
-            //var storyBoardHub = new StoryCardHub();
-            //storyBoardHub.Send("new", value);
         }
 
         // PUT api/storycards/5
@@ -100,8 +98,6 @@ namespace TheWall.Controllers
 
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<StoryCardHub>();
             hubContext.Clients.All.storyCardUpdate("update", value);
-            //var storyBoardHub = new StoryCardHub();
-            //storyBoardHub.Send("update", value);
         }
 
         // DELETE api/storycards/5
