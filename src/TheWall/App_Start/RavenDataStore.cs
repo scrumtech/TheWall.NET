@@ -1,10 +1,11 @@
 ﻿namespace TheWall
 {
+    using System;
+    using System.Reflection;
+
     using Raven.Client;
     using Raven.Client.Embedded;
     using Raven.Client.Indexes;
-    using System;
-    using System.Reflection;
 
     public class RavenDataStore
     {
@@ -26,11 +27,9 @@
             // setup ravenDB
             instance = new EmbeddableDocumentStore() 
             { 
-                ConnectionStringName = "RavenDB", 
-#if DEBUG
-                UseEmbeddedHttpServer = true 
-#endif
+                ConnectionStringName = "RavenDB"
             };
+
             // instance.Conventions.IdentityPartsSeparator = "-";
             instance.Initialize();
 
