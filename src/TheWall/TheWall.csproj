@@ -216,6 +216,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\dist\app.js" />
+    <Content Include="Content\dist\vendor.js" />
+    <Content Include="Content\dist\vendor.min.js" />
+    <Content Include="Content\styles\bootstrap.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -270,9 +274,50 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\vendor\backbone.collectionsubset.js" />
+    <Content Include="Content\vendor\backbone.js" />
+    <Content Include="Content\vendor\bootstrap.js" />
+    <Content Include="Content\vendor\handlebars.js" />
+    <Content Include="Content\vendor\jquery.js" />
+    <Content Include="Content\vendor\underscore.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="local.config" />
+    <Content Include="Content\Gruntfile.coffee" />
+    <Content Include="Content\coffee\collections\card\index.coffee" />
+    <Content Include="Content\coffee\collections\column\index.coffee" />
+    <Content Include="Content\coffee\collections\member\index.coffee" />
+    <Content Include="Content\coffee\entry.coffee" />
+    <Content Include="Content\coffee\main.coffee" />
+    <Content Include="Content\coffee\models\card\index.coffee" />
+    <Content Include="Content\coffee\models\column\index.coffee" />
+    <Content Include="Content\coffee\models\member\index.coffee" />
+    <Content Include="Content\coffee\router.coffee" />
+    <Content Include="Content\coffee\views\application\index.coffee" />
+    <Content Include="Content\coffee\views\card\.DS_Store" />
+    <Content Include="Content\coffee\views\card\form\.DS_Store" />
+    <Content Include="Content\coffee\views\card\form\index.coffee" />
+    <Content Include="Content\coffee\views\card\form\template.hbs" />
+    <Content Include="Content\coffee\views\card\item\.DS_Store" />
+    <Content Include="Content\coffee\views\card\item\index.coffee" />
+    <Content Include="Content\coffee\views\card\item\template.hbs" />
+    <Content Include="Content\coffee\views\card\list\.DS_Store" />
+    <Content Include="Content\coffee\views\card\list\index.coffee" />
+    <Content Include="Content\coffee\views\card\list\template.hbs" />
+    <Content Include="Content\coffee\views\column\.DS_Store" />
+    <Content Include="Content\coffee\views\column\item\index.coffee" />
+    <Content Include="Content\coffee\views\column\item\template.hbs" />
+    <Content Include="Content\coffee\views\column\lists\index.coffee" />
+    <Content Include="Content\coffee\views\column\lists\template.hbs" />
+    <Content Include="Content\coffee\views\member\.DS_Store" />
+    <Content Include="Content\coffee\views\member\form\index.coffee" />
+    <Content Include="Content\coffee\views\member\form\template.hbs" />
+    <Content Include="Content\coffee\views\member\item\.DS_Store" />
+    <Content Include="Content\coffee\views\member\item\index.coffee" />
+    <Content Include="Content\coffee\views\member\item\template.hbs" />
+    <Content Include="Content\coffee\views\member\list\.DS_Store" />
+    <Content Include="Content\coffee\views\member\list\index.coffee" />
+    <Content Include="Content\coffee\views\member\list\template.hbs" />
     <None Include="Properties\PublishProfiles\The Wall File System publish.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -298,7 +343,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -315,7 +359,6 @@
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Wall\Index.cshtml" />
