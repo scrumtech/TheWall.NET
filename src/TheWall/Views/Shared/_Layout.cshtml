@@ -1,43 +1,44 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Wall")</p>
-                </div>
-                <div class="float-right">
-                    <nav>
-                        
-                    </nav>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="offset1">
+                <a class="brand" href="#">The Wall</a>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+            <div class="container">
+                <ul class="nav">
+                    <li class="cardCreate active">
+                        <a class="active" href="#cardCreate">Add Card</a>
+                    </li>
+                    <li class="memberCreate active">
+                        <a class="active" href="#memberCreate">Add Member</a>
+                    </li>
+                    <li class="showMembers active">
+                        <a class="active" href="#showMembers">View all members</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - nib healthfunds ltd.</p>
-                </div>
-            </div>
-        </footer>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/vendor")
-        @Scripts.Render("~/bundles/app")
-        @RenderSection("scripts", required: false)
-    </body>
+    </div>
+    <div class="container spacing">
+        <div id="app">
+            @RenderSection("featured", required: false)
+            @RenderBody()
+        </div>
+    </div>
+    <div class="cardModal"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/vendor")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
 </html>
