@@ -9,6 +9,7 @@
 
 namespace TheWall.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Web.Http;
 
@@ -70,6 +71,7 @@ namespace TheWall.Controllers
         // DELETE api/users/5
         public void Delete(int id)
         {
+            throw new NotImplementedException();
         }
     }
 }
