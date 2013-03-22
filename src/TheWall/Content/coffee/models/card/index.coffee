@@ -14,25 +14,21 @@ Card = Backbone.Model.extend
 	urlRoot: '/TheWall/api/storycards'
 	
 	defaults: ->
-		number: null
-		column_id: null
-		is_blocked: false
+		CardNumber: null
+		ColumnId: null
+		IsBlocked: false
 
 	toJSON: ->
 		AcceptanceCriteria: @get('AcceptanceCriteria')
 		CardNumber: @get('CardNumber')
-		Collaborators: @get('Collaborators')
+		Collaborators: [ @get('Collaborators') ]
 		ColumnId: @get('ColumnId')
-		IsBlocked: @get('IsBlocked')
+		IsBlocked: Boolean @get('IsBlocked')
 		Notes: @get('Notes')
 		StickyNotes: @get('StickyNotes')
 		StoryPoints: @get('StoryPoints')
 		Title: @get('Title')
 		Type: @get('Type')
 		Id: @get('Id')
-
-	validate: (attribs)->
-		errors = [];
-		if attribs.title is undefined then "Remember to set a title"
 
 module.exports = Card

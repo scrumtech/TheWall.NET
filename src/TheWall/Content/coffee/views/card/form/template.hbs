@@ -8,7 +8,7 @@
       <label>Number</label>
       <input 
         class="card-number" 
-        name="number"
+        name="Number"
         value="{{model.CardNumber}}"
         type="text"></input>
     </div>
@@ -16,19 +16,19 @@
       <label>Card Type</label>
       <select 
         class="card-type" 
-        name="type"
+        name="Type"
       >
         <option value="">Select</option>
-        {{#each Type}}
-        <option value="{{name}}" {{isSelected}}> {{name}} </option>
-        {{/each}}
+        <option value="story" {{isSelected}}>Story</option>
+        <option value="tech" {{isSelected}}>Tech</option>
+        <option value="bug" {{isSelected}}>Bug</option>
       </select>
     </div>
     <div class="control-group">
       <label>Card Title</label>
       <input 
         class="card-title"
-        name="title"
+        name="Title"
         value="{{model.Title}}"
         type="text"></input>
     </div>
@@ -36,12 +36,12 @@
       <label>Points</label>
         <select 
         class="card-points" 
-        name="points"
+        name="StoryPoints"
       >
         <option value="">Select</option>
-        {{#each StoryPoints}}
-        <option value="{{name}}" {{isSelected}}> {{name}} </option>
-        {{/each}}
+        <option value="1" {{isSelected}}>1</option>
+        <option value="3" {{isSelected}}>3</option>
+        <option value="4" {{isSelected}}>5</option>
       </select>
     </div>
     <div class="control-group">
@@ -49,29 +49,30 @@
       <textarea 
         class="card-note"
         value="{{model.Notes}}"
-        name="note"></textarea>
+        name="Notes"></textarea>
     </div>
     <div class="control-group">
       <label>Member</label>
       <select 
         class="member" 
-        name="member"
+        name="Collaborators"
       >
         <option value="">Select</option>
-        {{#each Collaborators}}
-        <option value="{{name}}" {{isSelected}}>{{name}} </option>
-        {{/each}}
+        <option value="c.buttery@nib.com.au">Chris</option>
+        <option value="a.short@nib.com.au">Anthony</option>
+        <option value="w.falconer@nib.com.au">Will</option>
+        <option value="w.falconer@nib.com.au">Helle</option>
       </select>
     </div>
     <div class="control-group">
       <label>List</label>
       <select 
         class="column" 
-        name="column_id"
+        name="ColumnId"
       >
         <option value="">Select</option>
         {{#each columns}}
-        <option value="{{_id}}" {{isSelected}}>{{title}} </option>
+        <option value="{{Id}}" {{isSelected}}>{{Title}} </option>
         {{/each}}
       </select>
     </div>

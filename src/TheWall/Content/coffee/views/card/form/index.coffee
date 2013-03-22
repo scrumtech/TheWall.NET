@@ -37,7 +37,7 @@ CardForm = Backbone.View.extend
 	# Called when creating a card
 	# Extract the data from an element into the matching key/value store of the model
 	populateModel: ->
-		model = this.model;
+		model = this.model
 
 		this.$el.find('[name]').each ->
 			el = $(this)
