@@ -11,6 +11,8 @@
         public bool IsBlocked { get; set; }
         public int ColumnId { get; set; }
         public string Notes { get; set; }
+        public string Type { get; set; }
+        public string CardNumber { get; set; }
         public ICollection<StickyNote> StickyNotes { get; protected set; }
         public ICollection<Member> Collaborators { get; protected set; } 
 
