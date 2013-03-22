@@ -1,0 +1,92 @@
+<div class="modal-header">
+  <button class="close">x</button>
+  <h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label>Number</label>
+      <input 
+        class="card-number" 
+        name="number"
+        value="{{model.number}}"
+        type="text"></input>
+    </div>
+    <div class="control-group">
+      <label>Card Type</label>
+      <select 
+        class="card-type" 
+        name="type"
+      >
+        <option value="">Select</option>
+        {{#each categories}}
+        <option value="{{name}}" {{isSelected}}> {{name}} </option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Card Title</label>
+      <input 
+        class="card-title"
+        name="title"
+        value="{{model.title}}"
+        type="text"></input>
+    </div>
+    <div class="control-group">
+      <label>Points</label>
+        <select 
+        class="card-points" 
+        name="points"
+      >
+        <option value="">Select</option>
+        {{#each points}}
+        <option value="{{name}}" {{isSelected}}> {{name}} </option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Note</label>
+      <textarea 
+        class="card-note"
+        value="{{model.note}}"
+        name="note"></textarea>
+    </div>
+    <div class="control-group">
+      <label>Member</label>
+      <select 
+        class="member" 
+        name="member"
+      >
+        <option value="">Select</option>
+        {{#each members}}
+        <option value="{{name}}" {{isSelected}}>{{name}} </option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="control-group">
+      <label>List</label>
+      <select 
+        class="column" 
+        name="column_id"
+      >
+        <option value="">Select</option>
+        {{#each columns}}
+        <option value="{{_id}}" {{isSelected}}>{{title}} </option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="control-group control-checkbox">
+      <input 
+        class="card-status" 
+        name="is_blocked"
+        checked="{{model.is_blocked}}"
+        value="true"
+        type="checkbox"></input>
+        <label>Block this card?</label>
+    </div>
+    <button class="submit btn btn-primary">Save Card</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <a href="#" class="btn close">Close</a>
+</div>

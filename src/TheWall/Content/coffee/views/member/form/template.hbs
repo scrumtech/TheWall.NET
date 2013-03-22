@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <button class="close">x</button>
+  <h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label>Name</label>
+      <input 
+        class="member-name" 
+        name="name"
+        value="{{model.name}}"
+        type="text"></input>
+    </div>
+    <div class="control-group">
+      <label>Member Group</label>
+      <select 
+        class="member-group" 
+        name="membergroup"
+      >
+        <option value="">Select</option>
+        {{#each memberGroups}}
+        <option value="{{name}}" {{isSelected}}> {{name}} </option>
+        {{/each}}
+      </select>
+    </div>
+    <button class="submit btn btn-primary">Save Member</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <a href="#" class="btn close">Close</a>
+</div>
