@@ -5,6 +5,6 @@ Column = require('../../models/column/index')
 ColumnCollection = Backbone.Collection.extend
 
 	model: Column
-	url: '/columns'
+	url: '/TheWall/api/columns'
 
 module.exports = ColumnCollection

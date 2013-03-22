@@ -6,7 +6,7 @@ Card = require('../../models/card/index')
 CardCollection = Backbone.Collection.extend
 
 	model: Card
-	url: '/cards'
+	url: '/TheWall/api/storycards'
 
 	getPoints: ->
 		reduce = (num, model)-> model.get('points') + num

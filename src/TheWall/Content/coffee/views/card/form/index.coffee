@@ -69,7 +69,6 @@ CardForm = Backbone.View.extend
 		members = this.options.members.toJSON()
 		columns = this.options.columns.toJSON()
 
-
 		title: this.options.title || 'Card'
 		model: model
 		categories: categories

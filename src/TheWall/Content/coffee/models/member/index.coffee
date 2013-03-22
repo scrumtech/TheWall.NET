@@ -1,19 +1,17 @@
 'use strict'
 
 Member = Backbone.Model.extend
-	idAttribute: "_id"
 	memberGroups: ['A & D', 'BA', 'UX', 'FE Developer', 'BE Developer']
-	urlRoot: '/members'
-
-	url: ->
-		if this.get('_id')
-			return '/member/' + this.get('_id')
-		else
-			return '/member'
+	urlRoot: '/TheWall/api/users'
 
 	defaults: ->
 		name: null
 		membergroup: 'none'
+
+	toJSON: ->
+		Name: @get('Name')
+		Email: @get('Email')
+		Id: @get('Id')
 
 	setGroup: (newGroup) ->
 		this.set

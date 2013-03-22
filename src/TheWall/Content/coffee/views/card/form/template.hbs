@@ -9,7 +9,7 @@
       <input 
         class="card-number" 
         name="number"
-        value="{{model.number}}"
+        value="{{model.CardNumber}}"
         type="text"></input>
     </div>
     <div class="control-group">
@@ -19,7 +19,7 @@
         name="type"
       >
         <option value="">Select</option>
-        {{#each categories}}
+        {{#each Type}}
         <option value="{{name}}" {{isSelected}}> {{name}} </option>
         {{/each}}
       </select>
@@ -29,7 +29,7 @@
       <input 
         class="card-title"
         name="title"
-        value="{{model.title}}"
+        value="{{model.Title}}"
         type="text"></input>
     </div>
     <div class="control-group">
@@ -39,7 +39,7 @@
         name="points"
       >
         <option value="">Select</option>
-        {{#each points}}
+        {{#each StoryPoints}}
         <option value="{{name}}" {{isSelected}}> {{name}} </option>
         {{/each}}
       </select>
@@ -48,7 +48,7 @@
       <label>Note</label>
       <textarea 
         class="card-note"
-        value="{{model.note}}"
+        value="{{model.Notes}}"
         name="note"></textarea>
     </div>
     <div class="control-group">
@@ -58,7 +58,7 @@
         name="member"
       >
         <option value="">Select</option>
-        {{#each members}}
+        {{#each Collaborators}}
         <option value="{{name}}" {{isSelected}}>{{name}} </option>
         {{/each}}
       </select>
@@ -74,15 +74,6 @@
         <option value="{{_id}}" {{isSelected}}>{{title}} </option>
         {{/each}}
       </select>
-    </div>
-    <div class="control-group control-checkbox">
-      <input 
-        class="card-status" 
-        name="is_blocked"
-        checked="{{model.is_blocked}}"
-        value="true"
-        type="checkbox"></input>
-        <label>Block this card?</label>
     </div>
     <button class="submit btn btn-primary">Save Card</button>
   </form>

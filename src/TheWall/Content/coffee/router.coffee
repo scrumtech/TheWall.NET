@@ -22,8 +22,8 @@ Router = Backbone.Router.extend
 	routes:
 		"": "home"
 		"card/new": "cardCreate"
-		"card/:id/edit" : "cardUpdate"
-		"member/new": "memberCreate"
+		"card/edit" : "cardUpdate"
+		"user/create": "memberCreate"
 		"members": "showMembers"
 		"*default": "default_route"
 

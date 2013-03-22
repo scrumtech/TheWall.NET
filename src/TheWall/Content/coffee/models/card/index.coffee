@@ -9,15 +9,27 @@
 # as opposed to using Card = Backbone.Model.extend
 
 Card = Backbone.Model.extend
-	idAttribute: "_id"
 	points: [0,1,3,5]
 	categories: [ 'story', 'tech', 'design', 'bug' ]
-	urlRoot: '/cards'
+	urlRoot: '/TheWall/api/storycards'
 	
 	defaults: ->
 		number: null
 		column_id: null
 		is_blocked: false
+
+	toJSON: ->
+		AcceptanceCriteria: @get('AcceptanceCriteria')
+		CardNumber: @get('CardNumber')
+		Collaborators: @get('Collaborators')
+		ColumnId: @get('ColumnId')
+		IsBlocked: @get('IsBlocked')
+		Notes: @get('Notes')
+		StickyNotes: @get('StickyNotes')
+		StoryPoints: @get('StoryPoints')
+		Title: @get('Title')
+		Type: @get('Type')
+		Id: @get('Id')
 
 	validate: (attribs)->
 		errors = [];

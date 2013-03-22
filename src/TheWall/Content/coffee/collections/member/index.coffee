@@ -6,7 +6,7 @@ Member = require('../../models/member/index')
 MemberCollection = Backbone.Collection.extend
 
 	model: Member
-	url: '/members'
+	url: '/TheWall/api/users'
 
 	# save a member model
 	create: (model) ->

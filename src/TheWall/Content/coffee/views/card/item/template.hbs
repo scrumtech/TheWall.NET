@@ -1,18 +1,18 @@
 <div data-id="{{model._id}}" class="card {{model.type}} {{#if model.is_blocked}}is_blocked{{/if}}">
   <h3>{{model.title}}</h3>
 
-    <div class="card-number">Number <span>{{model.number}}</span></div>
+    <div class="card-number">Number <span>{{model.CardNumber}}</span></div>
 
-    {{#if model.points}}
-    <div class="card-points">{{model.points}}</div>
+    {{#if model.StoryPoints}}
+    <div class="card-points">{{model.StoryPoints}}</div>
     {{/if}}
 
-    {{#if model.member}}
-    <div class="card-members">Member: <span>{{model.member}}</span></div>
+    {{#if model.Collaborators}}
+    <div class="card-members">Member: <span>{{model.Collaborators}}</span></div>
     {{/if}}
 
-    {{#if model.note}}
-    <div class="card-notes">Note: <span>{{model.note}}</span></div>
+    {{#if model.Notes}}
+    <div class="card-notes">Note: <span>{{model.Notes}}</span></div>
     {{/if}}
 
     <span class="remove">x</span>

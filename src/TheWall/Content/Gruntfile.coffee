@@ -19,13 +19,13 @@ module.exports = (grunt)->
         stripBanners: true
       vendor:
         src: [
-          'public/vendor/underscore.js'
-          'public/vendor/backbone.js'
-          'public/vendor/handlebars.js'
-          'public/vendor/bootstrap.js',
-          'public/vendor/backbone.collectionsubset.js'
+          './vendor/underscore.js'
+          './vendor/backbone.js'
+          './vendor/handlebars.js'
+          './vendor/bootstrap.js',
+          './vendor/backbone.collectionsubset.js'
         ]
-        dest: 'public/dist/vendor.js'
+        dest: './dist/vendor.js'
 
     uglify:
       options:
@@ -33,8 +33,8 @@ module.exports = (grunt)->
         mangle: false
       vendor:
         files:
-          'public/dist/vendor.min.js': ['public/vendor/*.js']
-          'public/dist/app.min.js': ['public/dist/app.js']
+          './dist/vendor.min.js': ['./vendor/*.js']
+          './dist/app.min.js': ['./dist/app.js']
 
     jshint:
       options:
@@ -48,13 +48,13 @@ module.exports = (grunt)->
           console: true
           module: true
       gruntfile:
-        src: 'Gruntfile.js'
+        src: 'Gruntfile.coffee'
       files: [
-        'public/js/*.js'
-        'public/js/models/**/*.js'
-        'public/js/collections/**/*.js'
-        'public/js/views/**/*.js'
-        'public/js/views/**/**/*.js'
+        './js/*.js'
+        './js/models/**/*.js'
+        './js/collections/**/*.js'
+        './js/views/**/*.js'
+        './js/views/**/**/*.js'
       ]
     
     qunit:
@@ -64,12 +64,12 @@ module.exports = (grunt)->
       gruntfile:
         files: '<%= jshint.gruntfile.src %>'
         tasks: ['jshint:gruntfile']
-      files: ['public/coffee/**/*', 'public/coffee/**/*.hbs']
+      files: ['./coffee/**/*', './coffee/**/*.hbs']
       tasks: ['browserify', 'concat']
     
     browserify:
-      'public/dist/app.js':
-        entries: ['public/coffee/entry.coffee']
+      './dist/app.js':
+        entries: ['./coffee/entry.coffee']
         options:
           debug: true
 
