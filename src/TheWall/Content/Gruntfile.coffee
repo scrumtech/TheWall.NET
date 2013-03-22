@@ -19,7 +19,6 @@ module.exports = (grunt)->
         stripBanners: true
       vendor:
         src: [
-          'public/vendor/jquery.js'
           'public/vendor/underscore.js'
           'public/vendor/backbone.js'
           'public/vendor/handlebars.js'
@@ -35,6 +34,7 @@ module.exports = (grunt)->
       vendor:
         files:
           'public/dist/vendor.min.js': ['public/vendor/*.js']
+          'public/dist/app.min.js': ['public/dist/app.js']
 
     jshint:
       options:
